@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/patterns_test.dir/patterns_test.cpp.o -o patterns_test  lib/libgtest_main.a lib/libgtest.a

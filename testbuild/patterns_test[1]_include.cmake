@@ -1,5 +1,0 @@
-if(EXISTS "/home/felipetrost/projects/personal/remote-rgb-lights/testbuild/patterns_test[1]_tests.cmake")
-  include("/home/felipetrost/projects/personal/remote-rgb-lights/testbuild/patterns_test[1]_tests.cmake")
-else()
-  add_test(patterns_test_NOT_BUILT patterns_test_NOT_BUILT)
-endif()
