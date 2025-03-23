@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LED Strip Controller</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="/src/index.css" />
+</head>
+
+<body class="bg-gray-900 min-h-screen text-white">
+  <!-- Header -->
+  <header class="p-4 flex justify-between items-center bg-gray-800/50">
+    <h1 class="text-2xl font-bold">LED Strip Control</h1>
+    <button id="configBtn" class="p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors">
+      <i class="fas fa-cog"></i>
+    </button>
+  </header>
+
+  <div class="container mx-auto">
+    <!-- Animations Grid -->
+    <main class="p-6 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4" id="animationsGrid">
+      <!-- Animations will be dynamically inserted here -->
+    </main>
+
+    <!-- Configuration Modal -->
+    <div id="configModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 hidden">
+      <div class="bg-gray-800 p-6 rounded-lg w-96 max-w-full">
+        <h2 class="text-xl font-bold text-white mb-4">
+          LED Strip Configuration
+        </h2>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm text-gray-400 mb-2">Connection Type</label>
+            <select class="w-full bg-gray-700 text-white p-2 rounded">
+              <option>WiFi</option>
+              <option>Bluetooth</option>
+              <option>USB</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm text-gray-400 mb-2">LED Count</label>
+            <input type="number" class="w-full bg-gray-700 text-white p-2 rounded" value="30" />
+          </div>
+          <div class="flex justify-end space-x-2">
+            <button id="cancelConfig" class="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600">
+              Cancel
+            </button>
+            <button id="saveConfig" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <dialog
+    class="p-6 border rounded-lg shadow-xl bg-gray-800 border-gray-700 backdrop:slate-900 backdrop:backdrop-blur-xl open:animate-modal-in prose-invert w-[95%] max-w-[40ch] mx-auto mt-5"
+    id="config-dialog">
+    <div class="prose prose-invert">
+      <h1>New game</h1>
+
+      <button
+        class="p-2 bg-slate-600 border border-gray-200 rounded-lg hover:bg-slate-700 focus:outline-none focus:border-gray-500 w-full disabled:opacity-50 disabled:hover:bg-slate-600 disabled:cursor-not-allowed">
+        Start game
+      </button>
+    </div>
+  </dialog>
+
+  <script src="/src/render.js"></script>
+</body>
+
+</html>
